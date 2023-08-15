@@ -1,5 +1,3 @@
-from item import create_items 
-
 class Knapsack:
     def __init__(self, capacity):
         self.data = [];
@@ -23,7 +21,10 @@ class Knapsack:
         return None;
 
     def stat(self):
-        print(self.data);
+        print(f"""capacity: {self.capacity}
+weight: {self.weight}
+value: {self.value}
+{self.data}""");
         return None;
 
     def __gt__(self, k):
@@ -35,12 +36,4 @@ class Knapsack:
     def __eq__(self, k):
         return self.value == k.value;
 
-
-def greedy(knapsack, items):
-    pass;
-
-if __name__ == "__main__":
-    knapsack = Knapsack(48);
-    items = create_items(10, 22, 24);
-    [print(i) for i in items]
 

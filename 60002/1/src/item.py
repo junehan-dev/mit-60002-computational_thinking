@@ -5,9 +5,14 @@ class Item:
         self.name = n;
         self.value = v;
         self.weight = w;
-    def __repr__(self):
-        return f"name: {self.name} value: {self.value} weight: {self.weight}"
 
+    @property
+    def value_rate(self):
+        return round(self.value / self.weight, 3);
+
+    def __repr__(self):
+        return f"name: {self.name} value: {self.value} weight: {self.weight}, {self.value_rate}"
+    
 
 def _create_item(name, max_value, max_weight):
     return (Item(
@@ -17,11 +22,9 @@ def _create_item(name, max_value, max_weight):
     ));
 
 def create_items(count, max_value, max_weight):
-    return (
-            [_create_item(f'{i}', max_value, max_weight)
-            for i in range(count)
-            ]
-    );
+    return ([
+        _create_item(f'{i}', max_value, max_weight) for i in range(count)
+    ]);
 
 
 if __name__ == "__main__":
