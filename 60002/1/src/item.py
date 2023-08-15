@@ -12,7 +12,6 @@ class Item:
 
     def __repr__(self):
         return f"name: {self.name} value: {self.value} weight: {self.weight}, {self.value_rate}"
-    
 
 def _create_item(name, max_value, max_weight):
     return (Item(
